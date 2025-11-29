@@ -65,7 +65,12 @@ export default function ListingDetailPage() {
       return;
     }
 
-    if (user.uid === listing?.sellerId) {
+    if (!listing) {
+      alert('Listing not found');
+      return;
+    }
+
+    if (user.uid === listing.sellerId) {
       alert('This is your own listing!');
       return;
     }
